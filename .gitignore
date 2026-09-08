@@ -1,0 +1,20 @@
+.DS_Store
+
+# Source material and archives (too large for git)
+photos/
+*.zip
+*.mp4
+
+# Superseded site versions
+_old-sites-backup/
+
+# Scratch / review artifacts
+_v2review/
+.preview/
+.playwright-mcp/
+_tmp_*.png
+_about-m.png
+_art-m.png
+v2-*.png
+v3-*.png
+*.bak
