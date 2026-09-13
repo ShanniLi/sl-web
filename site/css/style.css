@@ -288,7 +288,7 @@ ul {
 
 .timeline-list li {
   display: grid;
-  grid-template-columns: 56px 1fr;
+  grid-template-columns: 6.5rem 1fr;
   gap: calc(var(--space-unit) * 2);
   align-items: baseline;
 }
@@ -298,6 +298,7 @@ ul {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--color-accent);
+  white-space: nowrap;
 }
 
 .timeline-event {
@@ -310,7 +311,7 @@ ul {
    ============================================================ */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2px;
 }
 
@@ -425,14 +426,34 @@ ul {
 
 .music-image-wrap img {
   width: 100%;
-  aspect-ratio: 3/4;
+  aspect-ratio: 3/2;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 30%;
   border-radius: 4px;
 }
 
 .music-block--trio .music-image-wrap img {
-  aspect-ratio: 3/2;
+  aspect-ratio: 3/4;
+  object-position: center top;
+}
+
+.music-photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(var(--space-unit) * 2);
+  margin-top: calc(var(--space-unit) * 6);
+  border-top: 1px solid var(--color-blush);
+  padding-top: calc(var(--space-unit) * 4);
+}
+
+.music-photos img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.music-photos img.is-portrait {
   object-position: center 20%;
 }
 
@@ -447,21 +468,6 @@ ul {
 .music-text p {
   margin-bottom: calc(var(--space-unit) * 2);
   font-size: 0.95rem;
-}
-
-.music-awards-strip {
-  margin-top: calc(var(--space-unit) * 6);
-  border-top: 1px solid var(--color-blush);
-  padding-top: calc(var(--space-unit) * 4);
-}
-
-.music-awards-strip img {
-  display: block;
-  margin-inline: auto;
-  max-width: 480px;
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
 }
 
 /* ============================================================
@@ -479,14 +485,25 @@ ul {
 
 .art4earth-poster {
   width: 100%;
-  max-width: 560px;
+  max-width: 520px;
   height: auto;
-  aspect-ratio: 675 / 1200;
+  aspect-ratio: 1000 / 1256;
   object-fit: contain;
+  border-radius: 4px;
 }
 
 .art4earth-text {
   margin-bottom: calc(var(--space-unit) * 6);
+}
+
+.art4earth-quote {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.5;
+  border-left: 3px solid var(--color-accent);
+  padding-left: calc(var(--space-unit) * 2.5);
+  margin-bottom: calc(var(--space-unit) * 3);
 }
 
 .art4earth-text p {
@@ -496,7 +513,7 @@ ul {
 
 .art4earth-photos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2px;
 }
 
@@ -545,6 +562,123 @@ ul {
 .achievements-list li span {
   font-size: 0.85rem;
   color: var(--color-muted);
+}
+
+.achievements-groups {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(var(--space-unit) * 5);
+}
+
+.achievements-group h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: calc(var(--space-unit) * 1);
+}
+
+.achievements-group .achievements-list {
+  grid-template-columns: 1fr;
+  gap: calc(var(--space-unit) * 2);
+}
+
+/* Behind-the-scenes and certificate rows reuse .gallery-tile for the lightbox */
+.subsection-heading {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: calc(var(--space-unit) * 8);
+  margin-bottom: calc(var(--space-unit) * 1);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.process-grid .gallery-tile img {
+  aspect-ratio: 3/4;
+  object-position: center 30%;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(var(--space-unit) * 2);
+  margin-top: calc(var(--space-unit) * 6);
+}
+
+.cert-grid .gallery-tile img {
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  background-color: #fff;
+  padding: calc(var(--space-unit) * 1);
+}
+
+/* ============================================================
+   Contact form
+   ============================================================ */
+.contact-form {
+  max-width: 560px;
+  display: grid;
+  gap: calc(var(--space-unit) * 2.5);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-unit) * 0.75);
+}
+
+.form-row label {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.form-row input,
+.form-row textarea {
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  background-color: #fff;
+  border: 1px solid var(--color-blush);
+  border-radius: 4px;
+  padding: calc(var(--space-unit) * 1.25) calc(var(--space-unit) * 1.5);
+  resize: vertical;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+  border-color: var(--color-accent);
+}
+
+.contact-submit {
+  justify-self: start;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: 4px;
+  padding: calc(var(--space-unit) * 1.5) calc(var(--space-unit) * 3);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.contact-submit:hover {
+  background-color: #a8443d;
+}
+
+.contact-status {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.contact-status.is-error {
+  color: var(--color-accent);
 }
 
 /* ============================================================
@@ -652,6 +786,14 @@ ul {
     align-items: start;
   }
 
+  .achievements-groups {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cert-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .footer-inner {
     grid-template-columns: 1fr 1fr 2fr;
     align-items: start;
@@ -696,7 +838,12 @@ ul {
     padding: calc(var(--space-unit) * 2) var(--inner-pad);
   }
 
-  .gallery-grid {
+  .gallery-grid,
+  .music-photos {
+    grid-template-columns: 1fr;
+  }
+
+  .art4earth-photos {
     grid-template-columns: repeat(2, 1fr);
   }
 }
