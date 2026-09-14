@@ -34,7 +34,6 @@
         <li><a href="#music">Music</a></li>
         <li><a href="#art4earth">Art4Earth</a></li>
         <li><a href="#achievements">Awards</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -381,37 +380,6 @@
           <figcaption><strong>Virtuoso Artists Festival</strong><span>Silver Medal, 2024</span></figcaption>
         </figure>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section class="section contact" id="contact">
-    <div class="section-inner">
-      <h2 class="section-heading">Get in touch</h2>
-      <p class="section-intro">
-        Have a question about Shanni's art, music, or the Art4Earth Club? Send a
-        note below and it will reach the family directly.
-      </p>
-      <!-- No email address is published in the markup, so crawlers can't scrape
-           one. On submit, the message is composed to the family's inboxes,
-           which are assembled in JS. A serverless endpoint can replace this
-           mailto flow later without changing the form markup. -->
-      <form class="contact-form" id="contact-form" novalidate>
-        <div class="form-row">
-          <label for="cf-name">Name</label>
-          <input type="text" id="cf-name" name="name" autocomplete="name" required />
-        </div>
-        <div class="form-row">
-          <label for="cf-email">Your email</label>
-          <input type="email" id="cf-email" name="email" autocomplete="email" required />
-        </div>
-        <div class="form-row">
-          <label for="cf-message">Message</label>
-          <textarea id="cf-message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="contact-submit">Send message</button>
-        <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
-      </form>
     </div>
   </section>
 
